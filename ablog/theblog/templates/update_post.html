@@ -4,6 +4,8 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
+
 <h1>Update Post</h1><br>
 
 <form method="POST">
@@ -11,5 +13,11 @@
     {{ form.as_p }}
     <button class="btn btn-secondary">Update</button>
 </form>
+
+{% else %}
+
+Access denied.
+
+{% endif %}
 
 {% endblock %}
